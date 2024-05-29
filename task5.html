@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Cho người dùng nhập vào chuỗi kí tự. Viết hàm kiểm tra xem tần suất xuất hiện của mỗi ký tự và in ra chúng
+         Input: “Hello World”
+        Output:
+
+     -->
+     <script>
+        function demKyTu(){
+            let input=("hello world");
+            let arr=input.split("")
+            let count=1;
+            for (let i = 0; i < arr.length; i++) {
+                count=1;
+                for (let j = i+1; j < arr.length; j++) {
+                    if(arr[i]===arr[j]){
+                          count++;
+                          if(j>i){
+                            arr.splice(j,1);
+                             j=j-1;                         
+                          }
+                    }
+                } 
+                console.log(`Ký tự ${arr[i]} xuất hiện ${count} lần`)
+
+            }
+
+        }
+        demKyTu()
+     </script>
+</body>
+</html>
